@@ -39,3 +39,12 @@ class QuarterWavePlate():
     def get_jones_vector(self):
         return self.jones
 
+class LinearPolarizer():
+
+    def __init__(self, angle=0):
+        self.angle = angle
+        self.jones = np.asarray([1,0])
+
+        if angle:
+            self.jones = rotate_vector(self.jones, angle)
+
